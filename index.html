@@ -1803,11 +1803,11 @@ function iniciarContador() {
     // Si la fecha actual ya pasó el 7 de noviembre de este año, usará el siguiente año automáticamente
     const ahora = new Date();
     let anioObjetivo = ahora.getFullYear();
-    let fechaObjetivo = new Date(`November 7, ${anioObjetivo} 00:00:00`).getTime();
+    let fechaObjetivo = new Date(`November 7, ${anioObjetivo} 18:00:00`).getTime();
 
     if (ahora.getTime() > fechaObjetivo) {
         anioObjetivo += 1;
-        fechaObjetivo = new Date(`November 7, ${anioObjetivo} 00:00:00`).getTime();
+        fechaObjetivo = new Date(`November 7, ${anioObjetivo} 18:00:00`).getTime();
     }
 
     function actualizarTimer() {
