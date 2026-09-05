@@ -1,0 +1,2184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Mis XV Años - Invitación</title>
+
+<!-- Miniatura para WhatsApp y Redes Sociales -->
+<meta property="og:title" content="Mis XV Años - Invitación">
+<meta property="og:description" content="Te invito a celebrar mis XV Años. ¡Acompáñame en este día tan especial!">
+<meta property="og:image" content="portada.jpg">
+<meta property="og:type" content="https://invitaendigitalweb-svg.github.io/isabelaxv/">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mis XV Años - Invitación">
+<meta name="twitter:description" content="Te invito a celebrar mis XV Años. ¡Acompáñame en este día tan especial!">
+<meta name="twitter:image" content="portada.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
+
+<style>
+
+/* =========================
+   GENERAL
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f7f2eb;
+}
+
+
+/* =========================
+   SOBRE
+========================== */
+
+.fullscreen-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.envelope-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background-color: #EDC5B5;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.15) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            0deg,
+            rgba(255,255,255,0.15) 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(255,255,255,0.25) 0%,
+            rgba(0,0,0,0.03) 100%
+        );
+
+    background-size:
+        4px 4px,
+        4px 4px,
+        100% 100%;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    perspective: 1500px;
+
+    z-index: 1;
+}
+
+
+/* =========================
+   SOLAPAS
+========================== */
+
+.flap {
+    position: absolute;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-style: solid;
+
+    transition:
+        transform 0.9s cubic-bezier(
+            0.25,
+            0.46,
+            0.45,
+            0.94
+        );
+
+    backface-visibility: hidden;
+}
+
+.envelope-flap-top {
+    top: 0;
+
+    border-width:
+        48vh
+        50vw
+        0
+        50vw;
+
+    border-color:
+        #E2B3A2
+        transparent
+        transparent
+        transparent;
+
+    transform-origin: top;
+
+    z-index: 4;
+}
+
+.envelope-flap-bottom {
+    bottom: 0;
+
+    border-width:
+        0
+        50vw
+        48vh
+        50vw;
+
+    border-color:
+        transparent
+        transparent
+        #C89685
+        transparent;
+
+    transform-origin: bottom;
+
+    z-index: 2;
+}
+
+.envelope-flap-left {
+    top: 0;
+
+    border-width:
+        50vh
+        0
+        50vh
+        50vw;
+
+    border-color:
+        transparent
+        transparent
+        transparent
+        #DAA695;
+
+    z-index: 1;
+}
+
+.envelope-flap-right {
+    top: 0;
+    right: 0;
+    left: auto;
+
+    border-width:
+        50vh
+        50vw
+        50vh
+        0;
+
+    border-color:
+        transparent
+        #DAA695
+        transparent
+        transparent;
+
+    z-index: 1;
+}
+
+
+/* =========================
+   SELLO
+========================== */
+
+.center-group {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 5;
+
+    transition:
+        opacity 0.3s ease;
+}
+
+.seal {
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.15);
+
+    margin-bottom: 20px;
+
+    border:
+        2px solid rgba(255,255,255,0.8);
+}
+
+.view-text {
+    font-size: 14px;
+
+    color: #ffffff;
+
+    font-weight: 400;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2.5px;
+
+    opacity: 0.95;
+
+    pointer-events: none;
+
+    background-color:
+        rgba(200, 150, 133, 0.9);
+
+    padding:
+        5px 12px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+/* =========================
+   CONTENIDO
+========================== */
+
+.invitation-content {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.8s ease 0.4s;
+
+    z-index: 3;
+
+    background-color: #f7f2eb;
+
+    overflow-y: auto;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+.card-wrapper {
+    width: 100%;
+
+    max-width: 420px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 0;
+
+    padding-bottom: 50px;
+}
+
+.invitation-img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 1s ease-out,
+        transform 1s ease-out;
+}
+
+.invitation-img.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   CONTADOR DE DÍAS
+========================== */
+
+.countdown-container {
+    width: 100%;
+
+    background-color: #F5F3F1;
+
+    padding: 30px 15px;
+
+    margin: 0;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 1s ease-out,
+        transform 1s ease-out;
+}
+
+.countdown-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.countdown-title {
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 40px;
+
+    color: #6E4A35;
+
+    margin-bottom: 12px;
+}
+
+.countdown-timer {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: baseline;
+
+    gap: 18px;
+}
+
+.time-box {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.time-number {
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 28px;
+
+    font-weight: 500;
+
+    color: #6E4A35;
+
+    line-height: 1;
+}
+
+.time-label {
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 10px;
+
+    color: #8C6A56;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    margin-top: 6px;
+}
+
+.time-separator {
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 22px;
+
+    color: #6E4A35;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   SECCIÓN DE UBICACIONES
+========================== */
+
+.location-container {
+    width: 100%;
+
+    background-color: #F9EEEB;
+
+    padding: 15px 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 1s ease-out,
+        transform 1s ease-out;
+}
+
+.location-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.btn-location {
+    display: inline-block;
+
+    background-color: #EDC5B5;
+
+    color: #6E4A35;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    text-decoration: none;
+
+    padding: 12px 26px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 4px 12px rgba(110, 74, 53, 0.1);
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn-location:hover {
+    background-color: #E2B3A2;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 16px rgba(110, 74, 53, 0.15);
+}
+
+
+/* =========================
+   ITINERARIO
+========================== */
+
+.itinerario-container {
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    padding: 25px 15px 35px;
+
+    font-family: "Cinzel", Georgia, serif;
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 1s ease-out,
+        transform 1s ease-out;
+}
+
+.itinerario-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.itinerario {
+    position: relative;
+
+    width: 100%;
+}
+
+.evento {
+    display: grid;
+
+    grid-template-columns:
+        1fr 34px 1fr;
+
+    align-items: center;
+
+    min-height: 105px;
+
+    position: relative;
+}
+
+.linea {
+    height: 100%;
+
+    min-height: 105px;
+
+    width: 1px;
+
+    background:
+        rgba(132, 106, 82, 0.38);
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin: 0 auto;
+}
+
+.punto {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #846a52;
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    box-shadow:
+        0 0 0 3px rgba(255,255,255,0.9);
+}
+
+.contenido {
+    display: flex;
+
+    align-items: center;
+
+    min-height: 105px;
+}
+
+.contenido.izquierda {
+    justify-content: flex-end;
+
+    padding-right: 28px;
+}
+
+.contenido.derecha {
+    justify-content: flex-start;
+
+    padding-left: 28px;
+}
+
+.icono {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.icono img {
+    width: 43px;
+    height: 43px;
+
+    object-fit: contain;
+
+    display: block;
+
+    opacity: 0.72;
+
+    filter: sepia(12%);
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
+}
+
+.icono:hover img {
+    transform: scale(1.08);
+
+    opacity: 1;
+}
+
+.texto {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    max-width: 180px;
+}
+
+.texto-izquierda {
+    text-align: right;
+
+    align-items: flex-end;
+}
+
+.hora {
+    font-family: "Cinzel", Georgia, serif;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    color: #765640;
+
+    line-height: 1.2;
+}
+
+.momento {
+    font-family: "Cinzel", Georgia, serif;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: 0.5px;
+
+    line-height: 1.5;
+
+    color: #665b54;
+}
+
+@media (max-width: 480px) {
+
+    .itinerario-container {
+        padding: 20px 8px 30px;
+    }
+
+    .evento {
+        grid-template-columns:
+            1fr 28px 1fr;
+
+        min-height: 100px;
+    }
+
+    .linea {
+        min-height: 100px;
+    }
+
+    .contenido.izquierda {
+        padding-right: 18px;
+    }
+
+    .contenido.derecha {
+        padding-left: 18px;
+    }
+
+    .icono {
+        width: 42px;
+        height: 42px;
+    }
+
+    .icono img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .hora {
+        font-size: 15px;
+    }
+
+    .momento {
+        font-size: 10px;
+    }
+
+    .texto {
+        max-width: 135px;
+    }
+}
+
+
+/* =========================
+   SECCIÓN ESPECIAL
+========================== */
+
+.background-section {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 20px 10px;
+
+    overflow: hidden;
+}
+
+.bg-image {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 1;
+}
+
+.overlay-img {
+    position: relative;
+
+    z-index: 2;
+
+    width: 48%;
+
+    height: auto;
+
+    display: block;
+
+    box-shadow: none;
+
+    border-radius: 0;
+
+    transition:
+        transform 1.2s cubic-bezier(0.25, 1, 0.5, 1),
+        opacity 1.2s ease-out;
+}
+
+.slide-from-left {
+    opacity: 0;
+
+    transform:
+        translateX(-100px);
+}
+
+.slide-from-right {
+    opacity: 0;
+
+    transform:
+        translateX(100px);
+}
+
+.slide-from-left.visible,
+.slide-from-right.visible {
+    opacity: 1;
+
+    transform:
+        translateX(0);
+}
+
+
+/* =========================
+   SISTEMA DE ASISTENCIA / PASES
+========================== */
+
+.rsvp-section-container {
+    width: 100%;
+    padding: 20px 15px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.rsvp-container {
+    width: 100%;
+    max-width: 380px;
+}
+
+.grupo-campo {
+    margin-bottom: 20px;
+}
+
+.bloque-persona {
+    border-top: 1px dashed #EDC5B5;
+    padding-top: 18px;
+    margin-top: 18px;
+}
+
+label.rsvp-titulo {
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #6E4A35;
+    text-align: center;
+}
+
+.rsvp-container input[type="text"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #EDC5B5;
+    border-radius: 12px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    background: rgba(255,255,255,.95);
+    color: #6E4A35;
+    transition: .3s;
+    outline: none;
+}
+
+.rsvp-container input[type="text"]:focus {
+    border-color: #C89685;
+    box-shadow: 0 0 8px rgba(200,150,133,.35);
+}
+
+.opciones-asistencia {
+    display: flex;
+    gap: 8px;
+}
+
+.opcion-btn {
+    flex: 1;
+}
+
+.opcion-btn input {
+    display: none;
+}
+
+.opcion-btn label {
+    display: block;
+    text-align: center;
+    padding: 12px 6px;
+    border: 1px solid #EDC5B5;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    background: rgba(255,255,255,.95);
+    color: #6E4A35;
+    transition: .3s;
+}
+
+.opcion-btn input:checked + label {
+    background: #EDC5B5;
+    border-color: #C89685;
+    color: #6E4A35;
+    font-weight: 600;
+}
+
+.rsvp-container button.btn-enviar {
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px;
+    border: none;
+    border-radius: 30px;
+    background: #EDC5B5;
+    color: #6E4A35;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: all .3s ease;
+    box-shadow: 0 4px 12px rgba(110,74,53,.15);
+}
+
+.rsvp-container button.btn-enviar:hover {
+    background: #E2B3A2;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(110,74,53,.2);
+}
+
+.rsvp-container button.btn-enviar:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.mensaje-estado {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.9);
+    border: 1px solid #EDC5B5;
+    color: #6E4A35;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.mensaje-estado.visible {
+    display: block;
+}
+
+.pase-tarjeta {
+    margin-top: 25px;
+}
+
+.contenidoPase {
+    position: relative;
+    width: 100%;
+    padding: 35px 20px;
+    text-align: center;
+    border: 2px solid #C89685;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #ffffff, #fdf8f5, #f7eee9);
+    box-shadow: 0 10px 25px rgba(110, 74, 53, 0.1);
+}
+
+.contenidoPase::before {
+    content: "✦";
+    display: block;
+    font-size: 18px;
+    color: #C89685;
+    margin-bottom: 8px;
+}
+
+.pase-titulo {
+    font-family: 'Cinzel', serif;
+    color: #6E4A35;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+}
+
+.pase-nombre {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: #6E4A35;
+    margin: 15px 0 20px;
+    line-height: 1.2;
+}
+
+.pase-linea {
+    width: 80px;
+    height: 1px;
+    background: #EDC5B5;
+    margin: 0 auto 18px;
+}
+
+.codigo {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 6px;
+    color: #6E4A35;
+    padding: 8px 16px;
+    border-top: 1px solid #EDC5B5;
+    border-bottom: 1px solid #EDC5B5;
+}
+
+.codigo-texto {
+    margin-top: 10px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8C6A56;
+}
+
+.boton-descargar {
+    width: 100%;
+    border: 1px solid #C89685;
+    border-radius: 30px;
+    padding: 12px 20px;
+    margin-top: 12px;
+    background: #EDC5B5;
+    color: #6E4A35;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(110, 74, 53, 0.1);
+    transition: all .2s ease;
+}
+
+.boton-descargar:hover {
+    background: #E2B3A2;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(110, 74, 53, 0.15);
+}
+
+
+/* =========================
+   APERTURA
+========================== */
+
+.open .envelope-flap-top {
+    transform:
+        rotateX(-180deg);
+}
+
+.open .envelope-flap-bottom {
+    transform:
+        rotateX(180deg);
+}
+
+.open .center-group {
+
+    opacity: 0;
+
+    visibility: hidden;
+}
+
+.open .invitation-content {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    z-index: 10;
+}
+
+
+/* =========================
+   MÚSICA
+========================== */
+
+.music-player {
+
+    position: fixed;
+
+    bottom: 25px;
+
+    right: 25px;
+
+    width: 55px;
+
+    height: 55px;
+
+    background-color: #C89685;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,0.2);
+
+    cursor: pointer;
+
+    z-index: 200;
+
+    transition:
+        transform 0.3s ease;
+
+    -webkit-tap-highlight-color:
+        transparent;
+}
+
+.music-player:active {
+
+    transform:
+        scale(0.95);
+}
+
+.music-player svg {
+
+    width: 24px;
+
+    height: 24px;
+
+    fill: #FFFFFF;
+}
+
+.music-player.playing {
+
+    animation:
+        pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0% {
+        box-shadow:
+            0 0 0 0
+            rgba(200, 150, 133, 0.7);
+    }
+
+    70% {
+        box-shadow:
+            0 0 0 10px
+            rgba(200, 150, 133, 0);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0
+            rgba(200, 150, 133, 0);
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="fullscreen-wrapper">
+
+
+<!-- =========================
+     SOBRE
+========================== -->
+
+<div
+    class="envelope-container"
+    id="envelope"
+    onclick="openEnvelope()"
+>
+
+    <div class="flap envelope-flap-top"></div>
+
+    <div class="flap envelope-flap-left"></div>
+
+    <div class="flap envelope-flap-right"></div>
+
+    <div class="flap envelope-flap-bottom"></div>
+
+
+    <div class="center-group">
+
+        <img
+            src="sello.png"
+            alt="Sello"
+            class="seal"
+        >
+
+        <div class="view-text">
+            Ver invitación
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         CONTENIDO
+    ========================== -->
+
+    <div
+        class="invitation-content"
+        id="scrollContainer"
+    >
+
+        <div class="card-wrapper">
+
+
+            <!-- 1. PORTADA -->
+
+            <img
+                src="portada.jpg"
+                alt="Portada - Mis XV Años"
+                class="invitation-img visible"
+            >
+
+
+            <!-- 2. PADRES -->
+
+            <img
+                src="padres.jpg"
+                alt="Padres"
+                class="invitation-img animate-on-scroll"
+            >
+
+
+            <!-- 3. FECHA -->
+
+            <img
+                src="fecha.jpg"
+                alt="Fecha"
+                class="invitation-img animate-on-scroll"
+            >
+
+
+            <!-- 4. CONTADOR -->
+
+            <div class="countdown-container animate-on-scroll">
+
+                <div class="countdown-title">
+                    Faltan
+                </div>
+
+                <div class="countdown-timer">
+
+                    <div class="time-box">
+
+                        <span
+                            class="time-number"
+                            id="days">
+                            00
+                        </span>
+
+                        <span class="time-label">
+                            Días
+                        </span>
+
+                    </div>
+
+                    <span class="time-separator">
+                        :
+                    </span>
+
+                    <div class="time-box">
+
+                        <span
+                            class="time-number"
+                            id="hours">
+                            00
+                        </span>
+
+                        <span class="time-label">
+                            Horas
+                        </span>
+
+                    </div>
+
+                    <span class="time-separator">
+                        :
+                    </span>
+
+                    <div class="time-box">
+
+                        <span
+                            class="time-number"
+                            id="minutes">
+                            00
+                        </span>
+
+                        <span class="time-label">
+                            Min
+                        </span>
+
+                    </div>
+
+                    <span class="time-separator">
+                        :
+                    </span>
+
+                    <div class="time-box">
+
+                        <span
+                            class="time-number"
+                            id="seconds">
+                            00
+                        </span>
+
+                        <span class="time-label">
+                            Seg
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 5. CEREMONIA -->
+
+            <img
+                src="ceremonia.jpg"
+                alt="Ceremonia"
+                class="invitation-img animate-on-scroll"
+            >
+
+
+            <!-- BOTÓN UBICACIÓN PARROQUIA -->
+
+            <div class="location-container animate-on-scroll">
+
+                <a
+                    href="https://www.google.com/maps/place/Parroquia+El+Se%C3%B1or+San+Jos%C3%A9/@25.7821818,-109.0055228,15z/data=!4m6!3m5!1s0x86ba2f5f18be4c91:0x56145f6cd7a04f01!8m2!3d25.7820465!4d-108.9953086!16s%2Fg%2F1td48dsw!18m1!1e3?entry=ttu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-location"
+                >
+                    Ver Ubicación
+                </a>
+
+            </div>
+
+
+            <!-- 6. RECEPCIÓN -->
+
+            <img
+                src="recepcion.jpg"
+                alt="Recepción"
+                class="invitation-img animate-on-scroll"
+            >
+
+
+            <!-- BOTÓN UBICACIÓN RECEPCIÓN -->
+
+            <div class="location-container animate-on-scroll">
+
+                <a
+                    href="https://www.google.com/maps/place/Trapiche+Museo+Interactivo+de+Los+Mochis/@25.7885189,-109.0016366,17z"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-location"
+                >
+                    Ver Ubicación
+                </a>
+
+            </div>
+
+
+            <!-- 7. IMAGEN ITINERARIO -->
+
+            <img
+                src="itinerario.jpg"
+                alt="Itinerario"
+                class="invitation-img animate-on-scroll"
+            >
+
+
+            <!-- 8. ITINERARIO INTERACTIVO -->
+
+            <section class="itinerario-container animate-on-scroll">
+
+                <div class="itinerario">
+
+
+                    <!-- 8:20 PM -->
+
+                    <div class="evento">
+
+                        <div class="contenido izquierda">
+
+                            <div class="icono">
+
+                                <img
+                                    src="https://i.imgur.com/xYHXeL9.png"
+                                    alt="Entrada de la quinceañera"
+                                >
+
+                            </div>
+
+                        </div>
+
+                        <div class="linea">
+
+                            <span class="punto"></span>
+
+                        </div>
+
+                        <div class="contenido derecha">
+
+                            <div class="texto">
+
+                                <span class="hora">
+                                    8:20 PM
+                                </span>
+
+                                <span class="momento">
+                                    Entrada de la quinceañera
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 8:40 PM -->
+
+                    <div class="evento">
+
+                        <div class="contenido izquierda">
+
+                            <div class="texto texto-izquierda">
+
+                                <span class="hora">
+                                    8:40 PM
+                                </span>
+
+                                <span class="momento">
+                                    Vals
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="linea">
+
+                            <span class="punto"></span>
+
+                        </div>
+
+                        <div class="contenido derecha">
+
+                            <div class="icono">
+
+                                <img
+                                    src="https://i.imgur.com/qb2QFsO.png"
+                                    alt="Vals"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 9:20 PM -->
+
+                    <div class="evento">
+
+                        <div class="contenido izquierda">
+
+                            <div class="icono">
+
+                                <img
+                                    src="https://i.imgur.com/5iX5qn7.png"
+                                    alt="Brindis"
+                                >
+
+                            </div>
+
+                        </div>
+
+                        <div class="linea">
+
+                            <span class="punto"></span>
+
+                        </div>
+
+                        <div class="contenido derecha">
+
+                            <div class="texto">
+
+                                <span class="hora">
+                                    9:20 PM
+                                </span>
+
+                                <span class="momento">
+                                    Brindis
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 9:50 PM -->
+
+                    <div class="evento">
+
+                        <div class="contenido izquierda">
+
+                            <div class="texto texto-izquierda">
+
+                                <span class="hora">
+                                    9:50 PM
+                                </span>
+
+                                <span class="momento">
+                                    Cena
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="linea">
+
+                            <span class="punto"></span>
+
+                        </div>
+
+                        <div class="contenido derecha">
+
+                            <div class="icono">
+
+                                <img
+                                    src="https://i.imgur.com/BzUQM62.png"
+                                    alt="Cena"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- 9. FONDO -->
+
+            <div class="background-section">
+
+                <img
+                    src="fondo.jpg"
+                    alt="Fondo"
+                    class="bg-image"
+                >
+
+                <img
+                    src="monitos.png"
+                    alt="Monitos"
+                    class="overlay-img slide-from-left animate-on-scroll"
+                >
+
+                <img
+                    src="vestimenta.png"
+                    alt="Vestimenta"
+                    class="overlay-img slide-from-right animate-on-scroll"
+                >
+
+            </div>
+
+
+            <!-- 10. TÍTULO REGALO -->
+
+            <img
+                src="tituloregalo.jpg"
+                alt="Mesa de Regalos"
+                class="invitation-img animate-on-scroll"
+            >
+
+
+            <!-- 11. REGALOS -->
+
+            <img
+                src="regalos.jpg"
+                alt="Detalles de Regalos"
+                class="invitation-img animate-on-scroll"
+            >
+
+
+            <!-- 12. NIÑOS -->
+
+            <img
+                src="ninos.jpg"
+                alt="Información sobre Niños"
+                class="invitation-img animate-on-scroll"
+            >
+
+
+            <!-- 13. LLUVIA DE SOBRES -->
+
+            <img
+                src="sobre.jpg"
+                alt="Sobre"
+                class="invitation-img animate-on-scroll"
+            >
+
+
+            <!-- 14. FORMULARIO ASISTENCIA Y PASES DE ENTRADA MULTI-PERSONA (1 A 3) -->
+
+            <div class="rsvp-section-container animate-on-scroll">
+
+                <div class="rsvp-container">
+
+                    <div id="formContent">
+
+                        <!-- SELECCIÓN DE CANTIDAD (1 A 3 PERSONAS) -->
+                        <div class="grupo-campo">
+                            <label class="rsvp-titulo">¿Cuántas personas confirman?</label>
+                            <div class="opciones-asistencia">
+                                <div class="opcion-btn">
+                                    <input type="radio" name="cantidad" id="cant1" value="1" checked onchange="cambiarCantidad(1)">
+                                    <label for="cant1">1 Persona</label>
+                                </div>
+                                <div class="opcion-btn">
+                                    <input type="radio" name="cantidad" id="cant2" value="2" onchange="cambiarCantidad(2)">
+                                    <label for="cant2">2 Personas</label>
+                                </div>
+                                <div class="opcion-btn">
+                                    <input type="radio" name="cantidad" id="cant3" value="3" onchange="cambiarCantidad(3)">
+                                    <label for="cant3">3 Personas</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PERSONA 1 -->
+                        <div class="bloque-persona" id="bloquePersona1">
+                            <div class="grupo-campo">
+                                <label class="rsvp-titulo" id="labelP1">Nombre completo</label>
+                                <input id="nombre1" type="text" placeholder="Nombre y dos apellidos" autocomplete="name">
+                            </div>
+
+                            <div class="grupo-campo">
+                                <label class="rsvp-titulo">Asistencia</label>
+                                <div class="opciones-asistencia">
+                                    <div class="opcion-btn">
+                                        <input type="radio" name="asistencia1" id="si1" value="SI">
+                                        <label for="si1">Sí asistiré</label>
+                                    </div>
+                                    <div class="opcion-btn">
+                                        <input type="radio" name="asistencia1" id="no1" value="NO">
+                                        <label for="no1">No asistiré</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PERSONA 2 (OCULTA POR DEFECTO) -->
+                        <div class="bloque-persona" id="bloquePersona2" style="display: none;">
+                            <div class="grupo-campo">
+                                <label class="rsvp-titulo">Nombre completo (Persona 2)</label>
+                                <input id="nombre2" type="text" placeholder="Nombre y dos apellidos" autocomplete="name">
+                            </div>
+
+                            <div class="grupo-campo">
+                                <label class="rsvp-titulo">Asistencia</label>
+                                <div class="opciones-asistencia">
+                                    <div class="opcion-btn">
+                                        <input type="radio" name="asistencia2" id="si2" value="SI">
+                                        <label for="si2">Sí asistiré</label>
+                                    </div>
+                                    <div class="opcion-btn">
+                                        <input type="radio" name="asistencia2" id="no2" value="NO">
+                                        <label for="no2">No asistiré</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PERSONA 3 (OCULTA POR DEFECTO) -->
+                        <div class="bloque-persona" id="bloquePersona3" style="display: none;">
+                            <div class="grupo-campo">
+                                <label class="rsvp-titulo">Nombre completo (Persona 3)</label>
+                                <input id="nombre3" type="text" placeholder="Nombre y dos apellidos" autocomplete="name">
+                            </div>
+
+                            <div class="grupo-campo">
+                                <label class="rsvp-titulo">Asistencia</label>
+                                <div class="opciones-asistencia">
+                                    <div class="opcion-btn">
+                                        <input type="radio" name="asistencia3" id="si3" value="SI">
+                                        <label for="si3">Sí asistiré</label>
+                                    </div>
+                                    <div class="opcion-btn">
+                                        <input type="radio" name="asistencia3" id="no3" value="NO">
+                                        <label for="no3">No asistiré</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn-enviar" id="botonEnviar" onclick="enviar()">Enviar confirmación</button>
+
+                    </div>
+
+                    <!-- MENSAJE DE ESTADO -->
+                    <div id="mensajeEstado" class="mensaje-estado"></div>
+
+                    <!-- PASES DE ENTRADA -->
+                    <div id="pasesContenedor"></div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     MÚSICA
+========================== -->
+
+<div
+    class="music-player"
+    id="musicButton"
+    onclick="toggleMusic(event)"
+>
+
+    <svg
+        id="musicIcon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+    >
+
+        <path
+            d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"
+        />
+
+    </svg>
+
+</div>
+
+
+</div>
+
+
+<!-- =========================
+     AUDIO
+========================== -->
+
+<audio
+    id="backgroundAudio"
+    loop
+>
+
+    <source
+        src="cancion.mp3"
+        type="audio/mpeg"
+    >
+
+</audio>
+
+
+<script>
+
+/* =========================
+   LÓGICA DEL CONTADOR DE DÍAS (7 DE NOVIEMBRE)
+========================== */
+
+function iniciarContador() {
+    // Si la fecha actual ya pasó el 7 de noviembre de este año, usará el siguiente año automáticamente
+    const ahora = new Date();
+    let anioObjetivo = ahora.getFullYear();
+    let fechaObjetivo = new Date(`November 7, ${anioObjetivo} 00:00:00`).getTime();
+
+    if (ahora.getTime() > fechaObjetivo) {
+        anioObjetivo += 1;
+        fechaObjetivo = new Date(`November 7, ${anioObjetivo} 00:00:00`).getTime();
+    }
+
+    function actualizarTimer() {
+        const ahoraTiempo = new Date().getTime();
+        const diferencia = fechaObjetivo - ahoraTiempo;
+
+        if (diferencia <= 0) {
+            document.getElementById('days').innerText = '00';
+            document.getElementById('hours').innerText = '00';
+            document.getElementById('minutes').innerText = '00';
+            document.getElementById('seconds').innerText = '00';
+            return;
+        }
+
+        const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+        const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+        document.getElementById('days').innerText = dias < 10 ? '0' + dias : dias;
+        document.getElementById('hours').innerText = horas < 10 ? '0' + horas : horas;
+        document.getElementById('minutes').innerText = minutos < 10 ? '0' + minutos : minutos;
+        document.getElementById('seconds').innerText = segundos < 10 ? '0' + segundos : segundos;
+    }
+
+    actualizarTimer();
+    setInterval(actualizarTimer, 1000);
+}
+
+document.addEventListener('DOMContentLoaded', iniciarContador);
+
+
+/* =========================
+   APERTURA Y MÚSICA
+========================== */
+
+let isOpen = false;
+
+const audio =
+    document.getElementById('backgroundAudio');
+
+const musicButton =
+    document.getElementById('musicButton');
+
+const envelope =
+    document.getElementById('envelope');
+
+audio.preload = "auto";
+
+
+function openEnvelope() {
+
+    if (!isOpen) {
+
+        isOpen = true;
+
+        envelope.classList.add('open');
+
+        const playPromise =
+            audio.play();
+
+        if (playPromise !== undefined) {
+
+            playPromise.then(() => {
+
+                musicButton.classList.add('playing');
+
+            }).catch(error => {
+
+                console.log(
+                    "Audio necesita interacción:",
+                    error
+                );
+
+            });
+
+        }
+
+        initScrollAnimations();
+
+    }
+
+}
+
+
+function toggleMusic(event) {
+
+    event.stopPropagation();
+
+    if (audio.paused) {
+
+        audio.play();
+
+        musicButton.classList.add('playing');
+
+    } else {
+
+        audio.pause();
+
+        musicButton.classList.remove('playing');
+
+    }
+
+}
+
+
+/* =========================
+   ANIMACIÓN DE SCROLL
+========================== */
+
+function initScrollAnimations() {
+
+    const animatedElements =
+        document.querySelectorAll(
+            '.animate-on-scroll'
+        );
+
+    const scrollContainer =
+        document.getElementById(
+            'scrollContainer'
+        );
+
+    const observer =
+        new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add('visible');
+
+                    }
+
+                });
+
+            },
+            {
+                root: scrollContainer,
+                threshold: 0.15
+            }
+        );
+
+    animatedElements.forEach(el => {
+
+        observer.observe(el);
+
+    });
+
+}
+
+
+/* =========================
+   API Y PASES DE ENTRADA
+========================== */
+
+const API_URL = 'https://script.google.com/macros/s/AKfycbxi7z3Qa3_6IQ60RgGrAQsyIaIFZOlbGjr4LMspd4S-q_9CkkPRNN4kSGNf1txID08E0Q/exec'
+
+function cambiarCantidad(num) {
+  const l1 = document.getElementById('labelP1');
+  l1.textContent = num === 1 ? 'Nombre completo' : 'Nombre completo (Persona 1)';
+
+  for (let i = 2; i <= 3; i++) {
+    const bloque = document.getElementById(`bloquePersona${i}`);
+    bloque.style.display = (i <= num) ? 'block' : 'none';
+  }
+}
+
+function llamarAPI(parametros) {
+  return new Promise((resolve, reject) => {
+    const callback = 'cb_' + Date.now() + '_' + Math.floor(Math.random() * 9999);
+    const script = document.createElement('script');
+    const query = new URLSearchParams({ ...parametros, callback });
+    const tiempo = setTimeout(() => { limpiar(); reject(); }, 15000);
+
+    window[callback] = function(data) {
+      clearTimeout(tiempo);
+      limpiar();
+      resolve(data);
+    };
+
+    function limpiar() {
+      delete window[callback];
+      if (script.parentNode) script.parentNode.removeChild(script);
+    }
+
+    script.onerror = function() {
+      clearTimeout(tiempo);
+      limpiar();
+      reject();
+    };
+
+    script.src = API_URL + '?' + query.toString();
+    document.body.appendChild(script);
+  });
+}
+
+async function enviar() {
+  const mensaje = document.getElementById('mensajeEstado');
+  const pasesContenedor = document.getElementById('pasesContenedor');
+  const boton = document.getElementById('botonEnviar');
+  const cantidad = parseInt(document.querySelector('input[name="cantidad"]:checked').value);
+
+  const datosPersonas = [];
+
+  for (let i = 1; i <= cantidad; i++) {
+    const nombre = document.getElementById(`nombre${i}`).value.trim();
+    const asistencia = document.querySelector(`input[name="asistencia${i}"]:checked`)?.value || '';
+
+    if (!nombre) {
+      mostrarMensaje(`Escribe el nombre completo de la persona ${i}.`);
+      return;
+    }
+    if (nombre.split(/\s+/).length < 3) {
+      mostrarMensaje(`Escribe el nombre y dos apellidos de la persona ${i}.`);
+      return;
+    }
+    if (!asistencia) {
+      mostrarMensaje(`Selecciona la asistencia de la persona ${i}.`);
+      return;
+    }
+
+    datosPersonas.push({ nombre, asistencia });
+  }
+
+  boton.disabled = true;
+  boton.textContent = 'Enviando...';
+  mensaje.className = 'mensaje-estado';
+  pasesContenedor.innerHTML = '';
+
+  try {
+    const params = {
+      accion: 'confirmar',
+      cantidad: cantidad
+    };
+
+    datosPersonas.forEach((p, idx) => {
+      params[`invitado${idx + 1}`] = p.nombre;
+      params[`asistencia${idx + 1}`] = p.asistencia;
+    });
+
+    const respuesta = await llamarAPI(params);
+
+    if (!respuesta.ok) {
+      mostrarMensaje(respuesta.mensaje);
+      return;
+    }
+
+    const vanAsistir = datosPersonas.some(p => p.asistencia === 'SI');
+
+    if (!vanAsistir) {
+      mostrarMensaje('Lamentamos que no puedan acompañarnos, gracias por avisar.');
+    } else {
+      mostrarMensaje(respuesta.mensaje || '¡Gracias por confirmar tu asistencia!');
+    }
+
+    if (respuesta.listaPases && respuesta.listaPases.length > 0) {
+      let contadorPases = 0;
+
+      datosPersonas.forEach((persona) => {
+        if (persona.asistencia === 'SI') {
+          const pase = respuesta.listaPases.find(p => p.nombre.toLowerCase().includes(persona.nombre.toLowerCase())) 
+                     || respuesta.listaPases[contadorPases];
+          
+          if (pase) {
+            agregarPaseHTML(pasesContenedor, pase, contadorPases);
+            contadorPases++;
+          }
+        }
+      });
+    }
+
+  } catch (error) {
+    console.error(error);
+    mostrarMensaje('No se pudo conectar con el sistema.');
+  } finally {
+    boton.disabled = false;
+    boton.textContent = 'Enviar confirmación';
+  }
+}
+
+function agregarPaseHTML(contenedor, pase, index) {
+  contenedor.innerHTML += `
+    <div class="pase-tarjeta">
+      <div id="contenidoPase_${index}" class="contenidoPase">
+        <div class="pase-titulo">Pase de entrada</div>
+        <div class="pase-linea"></div>
+        <div class="pase-nombre">${escapar(pase.nombre)}</div>
+        <div class="codigo">${escapar(pase.codigo)}</div>
+        <div class="codigo-texto">Código de acceso</div>
+      </div>
+      <button type="button" class="boton-descargar" onclick="descargarPase('contenidoPase_${index}', '${escapar(pase.nombre)}')">
+        Descargar pase de ${escapar(pase.nombre.split(' ')[0])}
+      </button>
+    </div>
+  `;
+}
+
+function mostrarMensaje(texto) {
+  const mensaje = document.getElementById('mensajeEstado');
+  mensaje.className = 'mensaje-estado visible';
+  mensaje.textContent = texto;
+}
+
+async function descargarPase(idContenido, nombreInvitado) {
+  const contenido = document.getElementById(idContenido);
+  if (!contenido) return;
+
+  const btn = event.target;
+  const textoOriginal = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Preparando pase...';
+
+  try {
+    if (!window.html2canvas) {
+      await new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+
+    const canvas = await html2canvas(contenido, {
+      scale: 3,
+      backgroundColor: '#f7f2eb',
+      useCORS: true,
+      logging: false,
+      imageTimeout: 15000
+    });
+
+    canvas.toBlob(function(blob) {
+      if (!blob) throw new Error('No se pudo generar la imagen.');
+      const url = URL.createObjectURL(blob);
+      const enlace = document.createElement('a');
+      enlace.href = url;
+      enlace.download = 'Pase-' + limpiarNombreArchivo(nombreInvitado) + '.png';
+      document.body.appendChild(enlace);
+      enlace.click();
+      document.body.removeChild(enlace);
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }, 'image/png');
+
+  } catch (error) {
+    console.error(error);
+    alert('No se pudo descargar el pase. Intenta nuevamente.');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = textoOriginal;
+  }
+}
+
+function limpiarNombreArchivo(nombre) {
+  return nombre
+    .replace(/[^a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]/g, '')
+    .replace(/\s+/g, '-')
+    .substring(0, 50) || 'Invitado';
+}
+
+function escapar(texto) {
+  return String(texto)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+</script>
+
+</body>
+
+</html>
